@@ -1,0 +1,54 @@
+.titulo{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.buscador{
+    margin: 60px;
+    text-align: center;
+}
+
+h1{
+    margin: 15px;
+}
+
+p{
+    background-color: aqua;
+}
+
+
+.main{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#buscador {
+    margin-bottom: 10px;
+}
+
+#buscador input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+#buscador button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#filtros button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
