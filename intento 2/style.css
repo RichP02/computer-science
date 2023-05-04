@@ -18,13 +18,15 @@ h1 {
     margin: 0;
 }
 
+/*Botones*/
+
 .search-bar {
     text-align: center;
     margin: 20px auto;
     width: 50%; /* Ajusta el ancho según tus necesidades */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .search-bar input {
@@ -34,7 +36,7 @@ h1 {
     margin-right: 5px;
 }
 
-.search-bar button {
+/*.search-bar button {
     padding: 10px;
     background-color: #501060;
     color: white;
@@ -42,8 +44,9 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     margin-right: 17px;
-}
+}*/
 
+/*Imagenes*/
 
 #image-container {
     display: flex;
@@ -53,8 +56,8 @@ h1 {
 
 .image-card {
     width: 200px;
-    min-width: 200px; /* Establece un ancho mínimo */
-    height: 250px; /* Establece una altura fija */
+    min-width: 200px;
+    height: 250px;
     margin: 10px;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -67,7 +70,7 @@ h1 {
 .image-card img {
     width: 100%;
     height: auto;
-    flex-grow: 1; /* Permite que la imagen ocupe el espacio restante */
+    flex-grow: 1;
 }
 
 .image-info {
@@ -79,9 +82,8 @@ h1 {
 
 .image-info h2 {
     margin-top: 0;
-    white-space: nowrap; /* Evita el salto de línea del título */
-    overflow: hidden; /* Oculta cualquier contenido excedente */
-    text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -103,3 +105,61 @@ h1 {
     font-size: 14px;
 }
 
+
+/*Imagenes emergentes*/
+
+.image-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    position: fixed;
+}
+
+.image-popup-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    max-height: 80%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-popup-img {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.image-popup-info {
+    flex: 1;
+}
+
+.image-popup-info h2 {
+    margin-top: 0;
+}
+
+.image-popup-info p {
+    margin-bottom: 0;
+}
+
+.image-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+}

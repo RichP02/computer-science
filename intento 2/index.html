@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
     <title>Marvel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -18,22 +19,66 @@
         <img src="./images/marvel.png" alt="Logo de marvel">
     </header>
 
+
+
     <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Buscar películas">
-        <button onclick="searchMovies()">Buscar</button>
-        <button onclick="sortMovies()">Ordenar</button>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="button">Button</button>
+            </div>
+            <input type="text" class="form-control" placeholder="Buscar películas" aria-label="" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Más moderno
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Más antiguo
+            </label>
+        </div>
     </div>
 
     <div id="image-container">
-        <div class="image-card" onclick="toggleDescription(this)">
-            <img src="./images/el primer vengador.jpg" alt="Image 1">
+        <div class="image-card" onclick="showImageDetails(this)">
+            <img src="./images/capitan.jpg" alt="CAPITAN AMERICA EL PRIMER VENGADOR">
             <div class="image-info">
-                <h2>Image 1</h2>
+                <h2>CAPITAN AMERICA EL PRIMER VENGADOR</h2>
                 <p class="description">Description of Image 1</p>
             </div>
         </div>
-        <div class="image-card" onclick="toggleDescription(this)">
-            <img src="./images/iron man.png" alt="Image 1">
+        <div class="image-card" onclick="showImageDetails(this)">
+            <img src="./images/capitan2.jpg" alt="CAPITAN AMERICA EL PRIMER VENGADOR">
+            <div class="image-info">
+                <h2>CAPITAN AMERICA EL PRIMER VENGADOR</h2>
+                <p class="description">Description of Image 1</p>
+            </div>
+        </div>
+        <div class="image-card" onclick="showImageDetails(this)">
+            <img src="./images/capitan3.jpg" alt="CAPITAN AMERICA EL PRIMER VENGADOR">
+            <div class="image-info">
+                <h2>CAPITAN AMERICA EL PRIMER VENGADOR</h2>
+                <p class="description">Description of Image 1</p>
+            </div>
+        </div>
+
+
+        <div class="image-card" onclick="showImageDetails(this)">
+            <img src="./images/iron man.png" alt="IRON MAN">
+            <div class="image-info">
+                <h2>IRON MAN</h2>
+                <p class="description">Description of Image 1</p>
+            </div>
+        </div>
+        <div class="image-card" onclick="showImageDetails(this)">
+            <img src="./images/iron man2.jpg" alt="IRON MAN">
+            <div class="image-info">
+                <h2>IRON MAN</h2>
+                <p class="description">Description of Image 1</p>
+            </div>
+        </div>
+        <div class="image-card" onclick="showImageDetails(this)">
+            <img src="./images/iron man3.jpg" alt="IRON MAN">
             <div class="image-info">
                 <h2>IRON MAN</h2>
                 <p class="description">Description of Image 1</p>
