@@ -36,15 +36,6 @@ h1 {
     margin-right: 5px;
 }
 
-/*.search-bar button {
-    padding: 10px;
-    background-color: #501060;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 17px;
-}*/
 
 /*Imagenes*/
 
@@ -69,9 +60,9 @@ h1 {
 
 .image-card img {
     width: 100%;
-    height: auto;
-    flex-grow: 1;
+    height: 270px; /* Establece una altura fija para todas las imágenes en las tarjetas */
 }
+
 
 .image-info {
     padding: 10px;
@@ -132,13 +123,17 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     overflow: hidden;
+    width: 800px; /* Establece un ancho fijo para el contenedor de la imagen emergente */
+    height: 700px;
 }
 
 .image-popup-img {
     flex: 1;
-    max-width: 50%;
+    width: 300px; /* Establece un ancho fijo para todas las imágenes */
+    height: auto; /* Ajusta automáticamente la altura */
     padding-right: 20px;
 }
+
 
 .image-popup-info {
     flex: 1;
