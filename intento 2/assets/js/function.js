@@ -336,8 +336,6 @@ for (let i = 0; i < peliculas.length; i++) {
     imagen.className = 'imagen';
     imagen.addEventListener('click', mostrarImagen);
 
-
-
   // Crea un nuevo elemento div para el título de la película
     const titulo = document.createElement('div');
     titulo.textContent = pelicula.name;
@@ -347,7 +345,6 @@ for (let i = 0; i < peliculas.length; i++) {
     divCard.appendChild(titulo);
     contenedor.appendChild(divCard);
 }
-
 
 const input = document.getElementById('input-peliculas');
 input.addEventListener('input', buscarPeliculas);
@@ -373,6 +370,8 @@ function buscarPeliculas() {
 
 
 function mostrarImagen() {
+    const pelicula = peliculas.find(pelicula => pelicula.image === this.src); 
+
     const ventanaEmergente = document.createElement('div');
     ventanaEmergente.className = 'ventana-emergente';
 
@@ -380,7 +379,33 @@ function mostrarImagen() {
     imagenVentana.src = this.src;
     imagenVentana.className = 'imagen-ventana';
 
+    const contenidoVentana = document.createElement('div');
+    contenidoVentana.className = 'contenido-ventana';
+  
+    const tituloVentana = document.createElement('h2');
+    tituloVentana.textContent = pelicula.name;
+
+    const repartoVentana = document.createElement('p');
+    repartoVentana.textContent = `Reparto: ${pelicula.reparto}`;
+
+    const directoresVentana = document.createElement('p');
+    directoresVentana.textContent = `Directores: ${pelicula.directores}`;
+
+    const actoresVentana = document.createElement('p');
+    actoresVentana.textContent = `Actores: ${pelicula.actores}`;
+
+    const estrenoVentana = document.createElement('p');
+    estrenoVentana.textContent = `Estreno: ${pelicula.estreno}`;
+
+    contenidoVentana.appendChild(tituloVentana);
+    contenidoVentana.appendChild(repartoVentana);
+    contenidoVentana.appendChild(directoresVentana);
+    contenidoVentana.appendChild(actoresVentana);
+    contenidoVentana.appendChild(estrenoVentana);
+  
     ventanaEmergente.appendChild(imagenVentana);
+    ventanaEmergente.appendChild(contenidoVentana);
+
 
     const botonCerrar = document.createElement('button');
     botonCerrar.textContent = 'Cerrar';
@@ -391,6 +416,9 @@ function mostrarImagen() {
 
     botonCerrar.addEventListener('click', cerrarImagen);
 }
+
+
+
 
 function cerrarImagen() {
     this.parentNode.remove();

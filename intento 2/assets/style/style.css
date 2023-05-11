@@ -126,6 +126,12 @@ body{
     cursor: pointer;
 }
 
+.contenido-ventana{
+    background-color: wheat;
+    padding: 40px;
+    border-radius: 10px;
+    margin-left: 25px;
+}
 
 
 
