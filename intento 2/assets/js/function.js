@@ -323,7 +323,6 @@ const peliculas = [
 
 
 
-
 const contenedor = document.querySelector('.contenedor');
 
 for (let i = 0; i < peliculas.length; i++) {
@@ -335,9 +334,11 @@ for (let i = 0; i < peliculas.length; i++) {
     const imagen = document.createElement('img');
     imagen.src = pelicula.image;
     imagen.className = 'imagen';
-
     imagen.addEventListener('click', mostrarImagen);
 
+
+
+  // Crea un nuevo elemento div para el título de la película
     const titulo = document.createElement('div');
     titulo.textContent = pelicula.name;
     titulo.className = 'titulo';
@@ -346,6 +347,30 @@ for (let i = 0; i < peliculas.length; i++) {
     divCard.appendChild(titulo);
     contenedor.appendChild(divCard);
 }
+
+
+const input = document.getElementById('input-peliculas');
+input.addEventListener('input', buscarPeliculas);
+
+function buscarPeliculas() {
+    const valorInput = input.value.toUpperCase();
+    const tarjetasPeliculas = document.getElementsByClassName('image-card');
+
+    for (let i = 0; i < tarjetasPeliculas.length; i++) {
+        const pelicula = tarjetasPeliculas[i];
+        const nombrePelicula = pelicula.querySelector('.titulo').textContent.toUpperCase();
+        if (nombrePelicula.includes(valorInput)) {
+            pelicula.style.display = 'block';
+        } else {
+            pelicula.style.display = 'none';
+        }
+    }
+}
+
+
+
+
+
 
 function mostrarImagen() {
     const ventanaEmergente = document.createElement('div');
@@ -370,114 +395,3 @@ function mostrarImagen() {
 function cerrarImagen() {
     this.parentNode.remove();
 }
-
-
-
-
-
-
-
-
-
-
-
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-
-/*const imagenes = document.querySelectorAll('.imagen');
-
-imagenes.forEach(imagen => {
-    imagen.addEventListener('click', () => {
-        window.open(imagen.src, '_blank');
-    });
-});
-
-function mostrarInformacion(id) {
-    // Obtener los valores del array de películas según el índice
-    const titulo = peliculas[id].titulo;
-    const fecha = peliculas[id].fecha;
-    const descripcion = peliculas[id].descripcion;
-    const imagen = peliculas[id].imagen;
-
-    // Crear elementos HTML para mostrar la información
-    const contenedor = document.createElement('div');
-    const imagenElement = document.createElement('img');
-    const informacionElement = document.createElement('div');
-    const tituloElement = document.createElement('h2');
-    const fechaElement = document.createElement('p');
-    const descripcionElement = document.createElement('p');
-
-    // Agregar clases y estilos a los elementos
-    contenedor.classList.add('contenedor');
-    imagenElement.classList.add('imagen');
-    informacionElement.classList.add('informacion');
-    tituloElement.classList.add('titulo');
-    fechaElement.classList.add('fecha');
-    descripcionElement.classList.add('descripcion');
-    imagenElement.setAttribute('src', imagen);
-
-    // Agregar el contenido a los elementos
-    tituloElement.textContent = titulo;
-    fechaElement.textContent = fecha;
-    descripcionElement.textContent = descripcion;
-
-    // Agregar los elementos al DOM
-    informacionElement.appendChild(tituloElement);
-    informacionElement.appendChild(fechaElement);
-    informacionElement.appendChild(descripcionElement);
-    contenedor.appendChild(imagenElement);
-    contenedor.appendChild(informacionElement);
-    document.body.appendChild(contenedor);
-}*/
-
-
-// Ventana emergente
-// Paso 1: Crear el elemento de ventana emergente
-/*const ventanaEmergente = document.createElement('div');
-ventanaEmergente.classList.add('ventana-emergente');
-ventanaEmergente.style.display = 'none';
-
-// Paso 2: Crear el elemento de imagen
-const imagenVentana = document.createElement('img');
-imagenVentana.classList.add('imagen-ventana');
-imagenVentana.style.width = '300px';
-imagenVentana.style.height = 'auto';
-imagenVentana.style.float = 'left';
-ventanaEmergente.appendChild(imagenVentana);
-
-// Paso 3: Crear el elemento de título
-const tituloVentana = document.createElement('div');
-tituloVentana.classList.add('titulo-ventana');
-tituloVentana.style.marginLeft = '310px';
-ventanaEmergente.appendChild(tituloVentana);
-
-// Paso 4: Agregar los elementos de imagen y título a la ventana emergente
-document.body.appendChild(ventanaEmergente);
-
-// Paso 5: Agregar el event listener para cada imagen de la página
-const imagenes = document.querySelectorAll('.imagen');
-for (let i = 0; i < imagenes.length; i++) {
-    imagenes[i].addEventListener('click', function() {
-        // Obtener el nombre y la imagen de la película seleccionada
-        const nombrePelicula = peliculas[i].name;
-        const imagenPelicula = peliculas[i].image;
-
-        // Mostrar la ventana emergente
-        ventanaEmergente.style.display = 'block';
-
-        // Actualizar la imagen y el título de la ventana emergente
-        imagenVentana.src = imagenPelicula;
-        tituloVentana.textContent = nombrePelicula;
-    });
-}
-
-// Paso 6: Cerrar la ventana emergente al hacer click fuera de ella
-ventanaEmergente.addEventListener('click', function() {
-    ventanaEmergente.style.display = 'none';
-});*/
