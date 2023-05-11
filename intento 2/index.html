@@ -14,56 +14,29 @@
 </head>
 
 <body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
     <header>
         <h1>Catálogo películas Marvel</h1>
         <img src="./images/marvel.png" alt="Logo de marvel">
     </header>
 
+<div class="searching-bar">
+    <input class="form-control" type="text" id="input-peliculas" placeholder="Buscar película" aria-label="" aria-describedby="basic-addon1">
+</div>
 
-<!--
-    <div class="search-bar">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary" type="button">Buscar</button>
-            </div>
-            <input type="text" class="form-control" placeholder="Buscar películas" aria-label="" aria-describedby="basic-addon1">
-        </div>
+<div class="contenedor">
+</div>
 
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Más nueva
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Más antigua
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="options" id="option2" autocomplete="off"> Orden cronológico
-            </label>
-        </div>
-    </div>
--->
-
-    <!--
-    <div class="image-container">
-        <div class="image-card" onclick="showImageDetails(this)">
-            <img src="./images/capitan.jpg" alt="Capitan America el primer vengador">
-        <div>
-    </div>
--->
-
-<div class="dashboard">
-    <div class="input-group mb-3">
-        <div class="list">
-            <div class="searching-bar">
-                <input id="buscarPelicula" type="text" class="form-control" placeholder="Buscar películas" aria-label="" aria-describedby="basic-addon1">
-            </div>
-            <div id="peliculas" class="image-container">
-                <!--
-                    Creado en js
-                -->
-            </div>
-        </div>
-    </div>
+<div class="popup">
 </div>
 
 
