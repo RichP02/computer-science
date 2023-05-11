@@ -323,6 +323,7 @@ const peliculas = [
 
 
 
+
 const contenedor = document.querySelector('.contenedor');
 
 for (let i = 0; i < peliculas.length; i++) {
@@ -335,34 +336,39 @@ for (let i = 0; i < peliculas.length; i++) {
     imagen.src = pelicula.image;
     imagen.className = 'imagen';
 
-  // Crea un nuevo elemento div para el título de la película
+    imagen.addEventListener('click', mostrarImagen);
+
     const titulo = document.createElement('div');
     titulo.textContent = pelicula.name;
     titulo.className = 'titulo';
 
-  // Agrega la imagen y el título al contenedor de la tarjeta
     divCard.appendChild(imagen);
     divCard.appendChild(titulo);
     contenedor.appendChild(divCard);
 }
 
+function mostrarImagen() {
+    const ventanaEmergente = document.createElement('div');
+    ventanaEmergente.className = 'ventana-emergente';
 
-const input = document.getElementById('input-peliculas');
-input.addEventListener('input', buscarPeliculas);
+    const imagenVentana = document.createElement('img');
+    imagenVentana.src = this.src;
+    imagenVentana.className = 'imagen-ventana';
 
-function buscarPeliculas() {
-    const valorInput = input.value.toUpperCase();
-    const tarjetasPeliculas = document.getElementsByClassName('image-card');
+    ventanaEmergente.appendChild(imagenVentana);
 
-    for (let i = 0; i < tarjetasPeliculas.length; i++) {
-        const pelicula = tarjetasPeliculas[i];
-        const nombrePelicula = pelicula.querySelector('.titulo').textContent.toUpperCase();
-        if (nombrePelicula.includes(valorInput)) {
-            pelicula.style.display = 'block';
-        } else {
-            pelicula.style.display = 'none';
-        }
-    }
+    const botonCerrar = document.createElement('button');
+    botonCerrar.textContent = 'Cerrar';
+    botonCerrar.className = 'boton-cerrar';
+    ventanaEmergente.appendChild(botonCerrar);
+
+    document.body.appendChild(ventanaEmergente);
+
+    botonCerrar.addEventListener('click', cerrarImagen);
+}
+
+function cerrarImagen() {
+    this.parentNode.remove();
 }
 
 
