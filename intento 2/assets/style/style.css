@@ -117,13 +117,14 @@ body{
 .boton-cerrar {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 25px;
     padding: 5px 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(240, 8, 8, 0.8);
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
+    color: white;
 }
 
 .contenido-ventana{
@@ -131,6 +132,7 @@ body{
     padding: 40px;
     border-radius: 10px;
     margin-left: 25px;
+    width: 600px;
 }
 
 
